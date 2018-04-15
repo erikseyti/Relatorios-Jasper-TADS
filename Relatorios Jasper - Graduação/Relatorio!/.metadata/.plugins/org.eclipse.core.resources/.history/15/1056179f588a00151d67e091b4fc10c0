@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2015-11-13T20:20:48 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Meu_Relatorio" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e4c543b7-8ad6-4b77-b05d-7353f0789ecf">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="cmVsYXRvcmlvLnRhYmVsYWFsdW5vIEFTICwxMTUsODUsMmI3NDRkYzktMTRmYS00NWIyLWEwNTct&#xA;NDJlOGJiYTMwMzhlOw=="/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Relatorio-Aula3"/>
+	<queryString>
+		<![CDATA[SELECT relatorio.tabelaaluno.id,
+	relatorio.tabelaaluno.`anoIngresso`,
+	relatorio.tabelaaluno.curso,
+	relatorio.tabelaaluno.nome,
+	relatorio.tabelaaluno.serie
+FROM relatorio.tabelaaluno]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anoIngresso" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="curso" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="serie" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="id">
+		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+	</group>
+	<group name="anoIngresso">
+		<groupExpression><![CDATA[$F{anoIngresso}]]></groupExpression>
+	</group>
+	<group name="curso">
+		<groupExpression><![CDATA[$F{curso}]]></groupExpression>
+	</group>
+	<group name="nome">
+		<groupExpression><![CDATA[$F{nome}]]></groupExpression>
+	</group>
+	<group name="serie">
+		<groupExpression><![CDATA[$F{serie}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

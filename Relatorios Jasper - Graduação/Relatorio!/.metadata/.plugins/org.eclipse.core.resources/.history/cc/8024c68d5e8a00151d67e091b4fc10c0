@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2015-11-13T20:48:13 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Meu_Relatorio" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e4c543b7-8ad6-4b77-b05d-7353f0789ecf">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="ANO_INGRESSO" class="java.lang.Integer">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT relatorio.tabelaaluno.`anoIngresso`,
+	relatorio.tabelaaluno.curso,
+	relatorio.tabelaaluno.nome,
+	relatorio.tabelaaluno.serie,
+	relatorio.tabelaaluno.id
+FROM relatorio.tabelaaluno WHERE relatorio.tabelaaluno.`anoIngresso`= $P{ANO_INGRESSO} 
+]]>
+	</queryString>
+	<field name="anoIngresso" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="curso" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="serie" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="id">
+		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+	</group>
+	<group name="anoIngresso">
+		<groupExpression><![CDATA[$F{anoIngresso}]]></groupExpression>
+	</group>
+	<group name="curso">
+		<groupExpression><![CDATA[$F{curso}]]></groupExpression>
+	</group>
+	<group name="nome">
+		<groupExpression><![CDATA[$F{nome}]]></groupExpression>
+	</group>
+	<group name="serie">
+		<groupExpression><![CDATA[$F{serie}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="202" y="0" width="150" height="30" uuid="6b592cbb-99a9-43af-8a15-51468295b21f"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Relátorio de Alunos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="33" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy HH:mm">
+				<reportElement x="460" y="0" width="100" height="30" uuid="820484e6-0e9f-427e-90cf-df55218f6c8a"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="8e6ba051-2cc1-42bc-a4d4-e3474eb82f6e"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="0" width="100" height="20" uuid="700be21b-470b-4ea6-8ad7-5b392235cc1e"/>
+				<text><![CDATA[NOME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="0" width="100" height="20" uuid="befe1102-3290-4e86-a386-3dc549c9c458"/>
+				<text><![CDATA[CURSO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="0" width="100" height="20" uuid="236e2f97-beb0-44c0-bf9c-21be816c1855"/>
+				<text><![CDATA[SERIE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="0" width="100" height="20" uuid="de2c9e5f-d818-4cde-8cfd-ca1458bedd62"/>
+				<text><![CDATA[ANO DE INGRESSO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="8d098681-e031-4b66-8384-2cc1f8008d47"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="0" width="100" height="20" uuid="32c1278c-696a-4e50-846d-23cda81425c1"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="220" y="0" width="100" height="20" uuid="eae3fbcc-e036-4215-9127-5963c4fdc7ac"/>
+				<textFieldExpression><![CDATA[$F{curso}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="340" y="0" width="100" height="20" uuid="732025f5-155f-4d12-a73a-d92ed27c8961"/>
+				<textFieldExpression><![CDATA[$F{serie}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="100" height="20" uuid="e16e40c9-c077-4de9-a782-949d1a3f8c42"/>
+				<textFieldExpression><![CDATA[$F{anoIngresso}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="360" y="0" width="100" height="30" uuid="48cd7c2b-f07b-45d8-84a9-3389771ccc94"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="460" y="0" width="100" height="30" uuid="ed15bacb-2dad-4ede-9058-142b26ebdd49"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</summary>
+</jasperReport>
